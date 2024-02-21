@@ -16,6 +16,9 @@ io.on('connection', (socket) => {
         console.log('Received message:', data);
         io.emit('message', data);
     });
+    socket.on('focus',()=>{
+        io.emit('focus')
+    })
 
     socket.on('disconnect', () => {
         console.log('User disconnected');
